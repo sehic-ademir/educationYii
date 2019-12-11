@@ -1,0 +1,107 @@
+<?php
+
+/* @var $this \yii\web\View */
+/* @var $content string */
+
+use yii\helpers\Html;
+use yii\bootstrap\Nav;
+use yii\bootstrap\NavBar;
+use yii\widgets\Breadcrumbs;
+use frontend\assets\AppAsset;
+use common\widgets\Alert;
+rmrevin\yii\fontawesome\NpmFreeAssetBundle::register($this);
+use rmrevin\yii\fontawesome\FA;
+
+AppAsset::register($this);
+?>
+
+
+<?php $this->beginPage() ?>
+<!DOCTYPE html>
+<html lang="<?= Yii::$app->language ?>">
+<head>
+    <meta charset="<?= Yii::$app->charset ?>">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php $this->registerCsrfMetaTags() ?>
+    <title><?= Html::encode($this->title) ?></title>
+    <?php $this->head() ?>
+</head>
+<body>
+<?php $this->beginBody() ?>
+
+<div class="wrap">
+    <?php
+    NavBar::begin([
+        'brandImage' => ['../../leftor.png'],
+        'brandUrl' => Yii::$app->homeUrl,
+        'options' => [
+            'class' => 'navbar-color bg-light navbar-fixed-top',
+            
+        ],
+      
+    ]);
+    if (!Yii::$app->user->isGuest) {
+    $menuItems = [
+
+        ['label' => 'My Account', 'url' => ['/site/about'],
+        'linkOptions' =>['class' => 'btn navbar-btn-primary']],
+        ['label' => 'Contact', 'url' => ['/site/contact'],
+        'linkOptions' => ['class' => 'btn navbar-btn-primary']],
+        Yii::$app->user->identity->approved ? ['label' => 'Settings', 'url' => ['/site/settings'],   'linkOptions' => ['class' => 'mobile-navbar btn navbar-btn-primary']]  : '',
+        Yii::$app->user->identity->approved ? ['label' => 'Lectures', 'url' => ['/edukacija/index'],   'linkOptions' => ['class' => 'btn navbar-btn-primary']]  : '',
+  
+       
+    ];
+}
+
+
+    if (Yii::$app->user->isGuest) {
+        $menuItems = [
+            ['label' => 'Home', 'url' => ['/site/index'],
+            'linkOptions' => ['class' => 'btn navbar-btn-primary']],
+            ['label' => 'Signup', 'url' => ['/site/signup'],
+            'linkOptions' => ['class' => 'btn navbar-btn-primary']],
+            ['label' => 'Login', 'url' => ['/site/login'],
+        'linkOptions' => ['class' => 'btn navbar-btn-primary']]
+         ];
+    } else {
+        $menuItems[] = '<li>'
+            . Html::beginForm(['/site/logout'], 'post')
+            . Html::submitButton(
+                '<i class="fas fa-sign-out-alt"></i> <sm>Log out</sm> ',
+                ['class' => 'navbar-btn-primary logout btn']
+            )
+            . Html::endForm()
+            . '</li>';
+    }
+
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => $menuItems,
+        'encodeLabels' => false,
+    ]);
+    
+    NavBar::end();
+    ?>
+    <div class="container">
+        
+        <?= Breadcrumbs::widget([
+            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+        ]) ?>
+        <?= Alert::widget() ?>
+        <?= $content ?>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+
+        
+    </div>
+</footer>
+
+<?php $this->endBody() ?>
+</body>
+</html>
+<?php $this->endPage() ?>

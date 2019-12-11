@@ -1,0 +1,431 @@
+/*
+* #347ab6 - primary blue
+*
+*/
+html,
+body {
+  height: 100%;
+}
+
+.wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+.wrap > .container {
+  padding: 70px 15px 20px;
+}
+
+.footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+.not-set {
+  color: #c55;
+  font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after,
+a.desc:after {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  padding-left: 5px;
+}
+
+a.asc:after {
+  content: "\e151";
+}
+
+a.desc:after {
+  content: "\e152";
+}
+
+.sort-numerical a.asc:after {
+  content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+  content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+  content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+  content: "\e156";
+}
+
+.grid-view td {
+  white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+  min-width: 50px;
+}
+
+.hint-block {
+  display: block;
+  margin-top: 5px;
+  color: #999;
+}
+
+.error-summary {
+  color: #a94442;
+  background: #fdf7f7;
+  border-left: 3px solid #eed3d7;
+  padding: 10px 20px;
+  margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav li > form > button.logout {
+  border: none;
+  padding: 15px;
+}
+
+@media (max-width: 767px) {
+  .nav li > form > button.logout {
+    display: block;
+    width: 100%;
+  }
+}
+
+.nav > li > form > button.logout:focus,
+.nav > li > form > button.logout:hover {
+  text-decoration: none;
+}
+
+.nav > li > form > button.logout:focus {
+  outline: none;
+}
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  color: #286090;
+}
+.navbar-brand {
+  color: #286090 !important;
+}
+.navbar-btn-primary {
+  background-color: transparent !important;
+  color: #347ab6 !important;
+}
+.navbar-btn-primary:hover {
+  background-color: #d9ebfa !important;
+}
+.navbar-btn-primary:focus {
+  border-color: transparent;
+  transition: 0.2s;
+  background-color: #347ab6 !important;
+  color: white !important;
+  box-shadow: 0 0 0 0.2rem rgba(52, 122, 182, 0.5);
+}
+.navbar-brand {
+  padding-top: 7px;
+  margin-bottom: 5px !important;
+}
+.navbar-brand img {
+  width: 40px;
+}
+nav {
+  background-color: #f5fafc;
+  border-bottom: 5px solid #347ab6 !important;
+}
+.icon-bar {
+  background-color: #347ab6 !important;
+  border: 2px solid #347ab6 !important;
+}
+#herophoto {
+  background-image: url("../education-it-1.jpg");
+
+  /* Set a specific height */
+  min-height: 400px;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+.display-4 {
+  font-weight: bold;
+  color: #347ab6 !important;
+}
+@media only screen and (max-width: 776px) {
+  .navbar-brand img {
+    margin-left: 15px !important;
+  }
+  .navbar-btn-primary:hover {
+    border: transparent !important;
+  }
+  #herophoto {
+    min-height: 300px;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
+  .btn-lg {
+    padding: 7px 12px !important;
+    font-size: 15px !important;
+  }
+  .logout {
+    margin-bottom: 7px;
+  }
+}
+.mt-4 {
+  margin-top: 4%;
+}
+.text-bold {
+  font-weight: bold;
+}
+.mt-0 {
+  margin-top: 0%;
+}
+.mb-0 {
+  margin-bottom: 0%;
+}
+.rounded {
+  border-radius: 10px !important;
+}
+.f-big {
+  font-size: 20px;
+}
+.p-3 {
+  padding: 3%;
+}
+.img-thumbnail {
+  padding: 0% !important;
+}
+.btn-light {
+  color: #347ab6 !important;
+  background-color: white;
+}
+.btn-light:hover {
+  background-color: #ededed;
+}
+.mt-1 {
+  margin-top: 1%;
+}
+.navbar-toggle {
+  border: 1px solid #abd8ff;
+}
+.navbar-toggle:focus {
+  background-color: #abd8ff;
+}
+.p-2 {
+  padding: 5px !important;
+}
+.warningtext {
+  color: #fec107 !important;
+}
+.warningtext:hover {
+  color: #e1a801 !important;
+}
+
+input[type="checkbox"]:checked {
+  background-color: green !important;
+}
+.skillset {
+  padding: 1% !important;
+  border-radius: 2px !important;
+  margin-left: 2px;
+  margin-right: 2px;
+  min-width: 70px !important;
+  max-width: 70px !important;
+  overflow: hidden;
+  margin-bottom: 2%;
+}
+.skillset:hover {
+  cursor: pointer;
+  background-color: #d9544f !important;
+}
+
+.skillset:hover .skillname{
+  display: none;
+}
+.skillset:hover .dlt-btn {
+  display: block;
+}
+.dlt-btn {
+  display: none;
+}
+
+.add-skillset {
+    border: 1px solid #347ab6;
+    border-radius: 4px;
+    max-width: 147px;
+    min-width: 147px;
+    max-height: 22px;
+    min-height: 22px;
+    text-align: center;
+    background-color: #347ab6;
+    color: white;
+    height: 25px;
+    padding: 16px;
+    margin-bottom: 2px;
+  }
+  .add-skillset::placeholder {
+    color: white;
+  
+  }
+  
+.border-success {
+  border: 2px solid #28a745 !important;
+  border-radius: 4% !important;
+  background-color: #28a745;
+  overflow: hidden;
+
+  max-width: 250px;
+  max-height: 300px;
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+}
+.border-danger {
+  border: 2px solid #dc3545 !important;
+  border-radius: 4% !important;
+  background-color: #dc3545;
+  overflow: hidden;
+  max-width: 250px;
+  max-height: 300px;
+  margin-top: 5%;
+}
+
+.fileinput-remove {
+  display: none !important;
+}
+@media only screen and (min-width: 600px) {
+  .mobile-navbar {
+    display: none !important;
+  }
+}
+@media only screen and (min-width: 767px) {
+  .rounded-circle {
+    overflow: hidden;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 300px;
+    max-height: 300px;
+  }
+  .mobile-settings {
+    width: 100%;
+    display: flex;
+  }
+  .setting-single {
+    margin: auto;
+  }
+  .setting-arrow {
+    display: none;
+  }
+  .setting-single button {
+    width: 250px;
+    height: 250px;
+  }
+  .setting-single i {
+    font-size: 100px;
+  }
+  .setting-title {
+    display: none;
+  }
+  .setting-single:hover {
+    background-color: white;
+  }
+  .setting-title-desktop {
+    margin-top: 5%;
+    font-size: 15px;
+  }
+  .mobile-navbar {
+    display: none;
+  }
+.mobile {
+  display: none;
+}
+form .submit-btn {
+  display: none !important;
+}
+}
+@media only screen and (max-width: 767px) {
+  .setting-title-desktop {
+    display: none;
+  }
+  .desktop-actions {
+    display: none;
+  }
+form .submit-btn {
+  min-width: 69px;
+  max-width: 69px;
+}
+.add-skillset {
+    max-width: 74px;
+    min-width: 74px;
+    max-height: 11px;
+    min-height: 11px;
+    font-size: 11px;
+}
+.mobile-settings {
+  width: 100%;
+  background-color: white;
+  margin: 1px;
+}
+.setting-single {
+  padding: 5%;
+  border-bottom: 1px solid lightgray;
+ 
+}
+.setting-single a {
+  text-decoration: none;
+}
+.setting-single:active {
+  background-color: #e5e4e9;
+}
+  .setting-arrow {
+    color: gray;
+    float: right;
+  }
+  .setting-title {
+    color: black;
+    text-decoration: none;
+  }
+
+}
+.fa-05x {
+  font-size: 0.8em;
+}
+.mobile-settings .btn {
+  padding: 3px 6px !important;
+}
+hr {
+  color: gray;
+}
+.rounded-circle {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.mobile {
+  font-size: 22px;
+}
