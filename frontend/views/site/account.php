@@ -41,21 +41,30 @@ $model = $user;
      
         <?php 
         foreach($skills as $skill) {
-        echo '<button class="btn skillset btn-primary" value=' .
-        $skill->skill_name  .
-       ' onclick="submit('.$skill->id.')" > <span class="skillname" >'  . $skill->skill_name . '</span><span class="dlt-btn" title='.$skill->skill_name .'>Delete</span></button>';
+     echo '<button class="btn skillset btn-primary row" value="' . $skill->skill_name  .'" 
+        onclick="submit('.$skill->id.')"  
+        id="'.$skill->id.'"
+        onmouseover="getSize('.$skill->id .')"
+         >
+        <span class="skillname" >'. $skill->skill_name . '</span>
+        </button>';
         }
         ?>
-
+ 
       <form>
         <input class="add-skillset" placeholder="Add Skill"  width="10" id="skillID" />
         <input type="submit" value="+" class="btn btn-success submit-btn" onclick="addSkill()" />
       </form>
 
-   
-        <hr>
-        <h4>CV:
-          <?=   Html::a('<i class="far fa-file-pdf text-danger"></i>', ['/uploads/' . $model->cv_path], ['target' => '_blank'])?> </h4>
+    <script>
+      function getSize(id){
+      var elmnt = document.getElementById(id);
+      var elmntWidth = elmnt.offsetWidth;
+      document.getElementById(id).style.minWidth  = elmntWidth + 'px';
+      }
+    </script>    
+    
+        
       </div>
     </div>
     <hr class="mobile">
@@ -82,7 +91,10 @@ $model = $user;
         <p>Gender:
           <?= $model->gender ? 'Male' : 'Female' ?>
         </p>
-    </div>
+        <p>CV:
+          <?=   Html::a('<i class="far fa-file-pdf text-primary"></i><span class="text-dark"> Download</span> ', ['/uploads/' . $model->cv_path], ['target' => '_blank'])?> </p>
+        
+        </div>
     <div class="col-md-4 col-sm-12 text-right desktop-actions" style="margin-top: 2%">
       <h4>Actions</h4>
       <p>Edit CV
@@ -131,7 +143,7 @@ Modal::end();
 
     </div>
   </div>
-
+  
 </div>
 <script type="text/javascript">
 

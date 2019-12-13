@@ -24,11 +24,12 @@ body {
 </style>
 
 <?= Html::a( '<button class="btn text-primary mobile">&#10094;</button>', ['account']); ?>
-      <div class="text-center">
-          <br>
-      <img class="rounded-circle" src=<?= $model->photo_path ? '/avatars/' . $model->photo_path : $png ?> class=
-        <?= $model->approved ? 'border-success' : 'border-danger'  ?> style="" />
-      </div>
+    
+<div class="image-container text-center">
+    <div class="rounded-circle">
+      <img  src=<?= $model->photo_path ? '/avatars/' . $model->photo_path : $png ?> class=<?= $model->approved?'border-green':'border-red' ?>  />
+    </div>
+</div>
     <br>
     <div class="w-100">
         <div class="mobile-settings">

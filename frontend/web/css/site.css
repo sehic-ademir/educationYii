@@ -1,6 +1,7 @@
 /*
 * #347ab6 - primary blue
-*
+* #dc3545 - danger red
+* #28a745 - success green
 */
 html,
 body {
@@ -253,8 +254,8 @@ input[type="checkbox"]:checked {
   border-radius: 2px !important;
   margin-left: 2px;
   margin-right: 2px;
-  min-width: 70px !important;
-  max-width: 70px !important;
+  min-width: 70px;
+ 
   overflow: hidden;
   margin-bottom: 2%;
 }
@@ -263,15 +264,6 @@ input[type="checkbox"]:checked {
   background-color: #d9544f !important;
 }
 
-.skillset:hover .skillname{
-  display: none;
-}
-.skillset:hover .dlt-btn {
-  display: block;
-}
-.dlt-btn {
-  display: none;
-}
 
 .add-skillset {
     border: 1px solid #347ab6;
@@ -323,13 +315,7 @@ input[type="checkbox"]:checked {
   }
 }
 @media only screen and (min-width: 767px) {
-  .rounded-circle {
-    overflow: hidden;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 300px;
-    max-height: 300px;
-  }
+  
   .mobile-settings {
     width: 100%;
     display: flex;
@@ -420,12 +406,42 @@ form .submit-btn {
 hr {
   color: gray;
 }
-.rounded-circle {
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  border-radius: 50%;
-}
 .mobile {
   font-size: 22px;
+}
+.text-dark {
+  color: black !important;
+}
+.rounded-circle img {
+  border-radius: 50% !important;
+  overflow: hidden;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+ 
+}
+.border-green {
+  border: 2px solid #28a745;
+
+}
+.border-red {
+  border: 2px solid #dc3545;
+}
+.contact-info:focus ~ .basic-information-text {
+ 
+  display: none;
+}
+.basic-information:not(focus) ~ .contact-info-text {
+  display: unset;
+  
+}
+.basic-information:focus ~ .contact-info-text {
+  display: none;
+}
+.visibleDltBtn {
+  display: block !important;
+}
+.hiddenDltBtn {
+  display: none;
 }
