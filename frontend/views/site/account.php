@@ -70,28 +70,28 @@ $model = $user;
     <hr class="mobile">
     <div class="col-md-4 col-sm-6">
       <h1>
-        <?= $model->first_name . ' ' . $model->last_name ?> <small class="text-primary"> <i class="fas fa-map-marker-alt"></i> <?= $model->city ?> </small> </h1>
+        <?= $model->first_name . ' ' . $model->last_name ?> <small class="text-primary"> <?= $model->city ? ' <i class="fas fa-map-marker-alt"></i>' : '' ?> <?= $model->city ?> </small> </h1>
       <?= $model->approved ?   '<h5 class="text-success"> @' . $model->username . '</h5>' : '<h5 class="text-danger"> @' . $model->username . '</h5>' ?>
-        <p style="margin-top: 5%;" class=<?= $attendance < 55 ? "text-danger" : 'text-success' ?>>
-          <?= $attendance?>% lectures present</p>
+    <div class="lectures">    <i style="margin-top: 5%;" class=<?= $attendance < 55 ? "bg-danger" : 'bg-success' ?>>
+          <?= $attendance?>% lectures present</i> </div>
         <hr>
         <h4><i class="fas fa-id-card text-primary"></i> Contact Information:</h4>
-        <p>Phone:
+        <p><i class="bg-info infos">Phone:</i>
           <?= $model->phone_number ?>
         </p>
-        <p>E-mail:
+        <p><i class="bg-info infos">E-mail:</i>
           <?= $model->email ?>
         </p>
-        <Address>Adresa: <?= $model->address ?> </Address>
+        <Address><i class="bg-info infos">Adresa:</i> <?= $model->address ?> </Address>
         <hr>
         <h4><i class="fas fa-info-circle text-primary"></i> Basic Information:</h4>
-        <p>Birthday:
+        <p><i class="bg-info infos">Birthday:</i>
           <?= $model->birthday ?>
         </p>
-        <p>Gender:
+        <p><i class="bg-info infos">Gender:</i>
           <?= $model->gender ? 'Male' : 'Female' ?>
         </p>
-        <p>CV:
+        <p><i class="bg-info infos">CV:</i>
           <?=   Html::a('<i class="far fa-file-pdf text-primary"></i><span class="text-dark"> Download</span> ', ['/uploads/' . $model->cv_path], ['target' => '_blank'])?>
         </p>
         
