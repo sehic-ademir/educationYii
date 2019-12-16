@@ -197,6 +197,11 @@ class SiteController extends Controller
     }
     }
     public function actionSettings() {
+        if (Yii::$app->user->isGuest) {
+            return $this->goHome();
+
+        }
+        
         $image = new UploadAvatar();
         if (Yii::$app->request->isPost) {
             $image->photo = UploadedFile::getInstance($image, 'photo');
@@ -454,10 +459,14 @@ class SiteController extends Controller
     }
 
    public function actionHomeworks() {
-        if (Yii::$app->user->isGuest) {
-            return $this->goHome();
+    if (Yii::$app->user->isGuest) {
+        return $this->goHome();
 
-        }
+    }
+    if (Yii::$app->user->identity->approved != true) {
+        return $this->goHome();
+
+    }    
         $searchModel = new HomeworkSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -475,10 +484,7 @@ public function actionAddSkill() {
             return $this->goHome();
 
         }
-        if (Yii::$app->user->identity->approved != true) {
-            return $this->goHome();
-
-        }    
+   
        
         $isExisting = false;
         $userId = Yii::$app->user->identity->id;
@@ -486,7 +492,7 @@ public function actionAddSkill() {
         ->where(['user_id' => $userId])->all();
         $skillId = 0;
         foreach($allSkills as $skill) {
-          if($skill->skill_name == $id){
+          if(strtolower($skill->skill_name) == strtolower($id)){
             $skillId = $skill->id;
             $isExisting = true;
             break;
@@ -515,10 +521,7 @@ public function actionDeleteSkill($id) {
             return $this->goHome();
 
         }
-        if (Yii::$app->user->identity->approved != true) {
-            return $this->goHome();
-
-        }    
+      
         $deleteSkill = UserSkill::find()->where(['id' => $id])->one();
         $deleteSkill->status = 0;
         $deleteSkill->updated_at = date('Y-m-d H:i:s');

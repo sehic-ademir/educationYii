@@ -75,7 +75,7 @@ $model = $user;
         <p style="margin-top: 5%;" class=<?= $attendance < 55 ? "text-danger" : 'text-success' ?>>
           <?= $attendance?>% lectures present</p>
         <hr>
-        <h4>Contact Info:</h4>
+        <h4><i class="fas fa-id-card text-primary"></i> Contact Information:</h4>
         <p>Phone:
           <?= $model->phone_number ?>
         </p>
@@ -84,7 +84,7 @@ $model = $user;
         </p>
         <Address>Adresa: <?= $model->address ?> </Address>
         <hr>
-        <h4>Basic Information:</h4>
+        <h4><i class="fas fa-info-circle text-primary"></i> Basic Information:</h4>
         <p>Birthday:
           <?= $model->birthday ?>
         </p>
@@ -92,8 +92,12 @@ $model = $user;
           <?= $model->gender ? 'Male' : 'Female' ?>
         </p>
         <p>CV:
-          <?=   Html::a('<i class="far fa-file-pdf text-primary"></i><span class="text-dark"> Download</span> ', ['/uploads/' . $model->cv_path], ['target' => '_blank'])?> </p>
+          <?=   Html::a('<i class="far fa-file-pdf text-primary"></i><span class="text-dark"> Download</span> ', ['/uploads/' . $model->cv_path], ['target' => '_blank'])?>
+        </p>
         
+
+
+
         </div>
     <div class="col-md-4 col-sm-12 text-right desktop-actions" style="margin-top: 2%">
       <h4>Actions</h4>

@@ -38,8 +38,10 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'label' => 'User',
             'attribute' => 'user_id',
+            'format' => 'raw',
         'value'=>function ($model, $index, $widget){
-            return $model->user->first_name . ' '. $model->user->last_name
+            return Html::a($model->user->first_name . ' '. $model->user->last_name, ['/user/view', 'id' => $model->user->id]);
+           
            ;}
         
     ],
