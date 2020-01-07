@@ -120,6 +120,7 @@ class EdukacijaController extends Controller
         $prijavljeni->user_id = Yii::$app->user->identity->id;
         $prijavljeni->lecture_id = $id;
         $prijavljeni->created_at = $time;
+        $prijavljeni->present = 0;
         }
         else 
             $prijavljeni = Prijavljeni::find()->where(['user_id' => Yii::$app->user->identity->id, 'lecture_id' => $id])->one();

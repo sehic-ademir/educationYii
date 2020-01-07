@@ -98,7 +98,6 @@ $this->params['breadcrumbs'][] = $this->title;
 <script type="text/javascript">
 
     function submit($key) {
-        confirm("Potvrdite");
         $.ajax({
             type: "POST",
             url: '/edukacija/change-state?id='+$key, // Your controller action
