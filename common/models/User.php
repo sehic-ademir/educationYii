@@ -57,6 +57,7 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
+            [['username', 'password', 'email'], 'required'],
             [['first_name', 'last_name', 'phone_number', 'cv_path', 'address', 'birthday', 'gender', 'city', 'photo_path'], 'safe'],
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
@@ -183,7 +184,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_hash = Yii::$app->security->generatePasswordHash($password);
     }
+    public function getPassword()
 
+    {
+
+        return $this->password_hash;
+
+    }
     /**
      * Generates "remember me" authentication key
      */

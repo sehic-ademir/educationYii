@@ -17,7 +17,7 @@ class m191204_113649_user_skill_table extends Migration
             'user_id' => $this->integer(255)->notNull(),
             'skill_name' => $this->string(255),
             'status' => $this->boolean(),
-            'created_at' => $this->timestamp(),
+            'created_at' => $this->datetime(),
             'updated_at' => $this->datetime()
         ]);
         $this->addForeignKey(
@@ -28,7 +28,7 @@ class m191204_113649_user_skill_table extends Migration
             'id',
             'CASCADE'
             );
-      
+
     }
 
     /**

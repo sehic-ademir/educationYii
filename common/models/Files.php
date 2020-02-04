@@ -31,6 +31,7 @@ class Files extends \yii\db\ActiveRecord
         return [
             [['lecture_id', 'file_path'], 'required'],
             [['lecture_id'], 'integer'],
+            [['status', 'created_at', 'updated_at'], 'safe'],
             [['file_path'], 'string', 'max' => 255],
             [['lecture_id'], 'exist', 'skipOnError' => true, 'targetClass' => Edukacije::className(), 'targetAttribute' => ['lecture_id' => 'id']],
         ];
@@ -45,6 +46,7 @@ class Files extends \yii\db\ActiveRecord
             'id' => 'ID',
             'lecture_id' => 'Lecture ID',
             'file_path' => 'File Path',
+            'status' => 'Status'
         ];
     }
 

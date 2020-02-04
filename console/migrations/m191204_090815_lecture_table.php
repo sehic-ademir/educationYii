@@ -20,7 +20,7 @@ class m191204_090815_lecture_table extends Migration
         'lecture_date' => $this->date(),
         'lecture_time' => $this->time(),
         'status' => $this->boolean(),
-        'created_at' => $this->timestamp(),
+        'created_at' => $this->datetime(),
         'updated_at' => $this->datetime()
         ]);
     }

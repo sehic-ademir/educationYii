@@ -34,10 +34,10 @@ class Edukacije extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['lecturer', 'lecture_title', 'lecture_date', 'lecture_time'], 'required'],
-            [['lecture_date', 'lecture_time', 'subject'], 'safe'],
+            [['lecturer', 'lecture_title'], 'required'],
+            [['lecture_date', 'lecture_time', 'subject', 'status', 'created_at', 'updated_at', 'lecturer', 'lecture_title', 'id'], 'safe'],
             [['lecturer'], 'string', 'max' => 35],
-            [['lecture_date'], 'date', 'format' => 'php:Y-m-d'],
+            [['lecture_date'], 'date', 'format' => 'Y-m-d'],
             [['lecture_time'],  'date', 'format'=>'H:i'],
             [['lecture_title'], 'string', 'max' => 255],
         ];
@@ -79,4 +79,3 @@ class Edukacije extends \yii\db\ActiveRecord
         return $this->hasMany(UserFiles::className(), ['lecture_id' => 'id']);
     }
 }
-

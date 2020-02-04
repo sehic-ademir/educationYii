@@ -66,7 +66,7 @@ class SignupForm extends Model
         $user->first_name = $this->first_name;
         $user->last_name = $this->last_name;
         $user->phone_number = $this->phone_number;
-        $user->birthday = date('1992-01-01');
+        $user->birthday = date('1970-01-01');
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();

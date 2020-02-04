@@ -18,7 +18,7 @@ class m191205_085612_lecture_applier_table extends Migration
         'user_id' => $this->integer(255)->notNull(),
         'present' => $this->boolean(),
         'status' => $this->boolean(),
-        'created_at' => $this->timestamp(),
+        'created_at' => $this->datetime(),
         'updated_at' => $this->datetime()
         ]);
         $this->addForeignKey(

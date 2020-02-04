@@ -505,6 +505,7 @@ public function actionAddSkill() {
         $addSkill->user_id = $userId;
         $addSkill->skill_name = $id;
         $addSkill->status = 1;
+        $addSkill->created_at = date('Y-m-d H:i:s');
         }
         else {
             $addSkill = UserSkill::find()->where(['id' => $skillId])->one();

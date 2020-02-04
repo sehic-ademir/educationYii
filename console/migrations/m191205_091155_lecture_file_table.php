@@ -18,7 +18,7 @@ class m191205_091155_lecture_file_table extends Migration
             'file_path' => $this->string(255)->notNull(),
             'file_name' => $this->string(255),
             'status' => $this->boolean(),
-            'created_at' => $this->timestamp(),
+            'created_at' => $this->datetime(),
             'updated_at' => $this->datetime()
             ]);
             $this->addForeignKey(

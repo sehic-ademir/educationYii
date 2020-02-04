@@ -40,6 +40,8 @@ class UploadEduFiles extends Model
                 $files = new Files();
                 $files->lecture_id = $edukacijaId;
                 $files->file_path = $edukacijaId . '-' . $i . '-' . $edukacija->lecturer . '.' . $onefile->extension;
+                $files->status = 1;
+                $files->created_at = date('Y-m-d H:i:s');
                 $files->save();
                 $filename =  $edukacijaId . '-' . $i . '-' . $edukacija->lecturer . '.' . $onefile->extension;
                 $onefile->saveAs( $source . $filename);

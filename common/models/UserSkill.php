@@ -32,7 +32,7 @@ class UserSkill extends \yii\db\ActiveRecord
         return [
             [['user_id', 'skill_name'], 'required'],
             [['user_id'], 'integer'],
-            [['status', 'created_at', 'updated_at'], 'safe'],
+            [['status', 'updated_at'], 'safe'],
             [['status'], 'boolean'],
             [['skill_name'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
